@@ -2,6 +2,7 @@
 const searchField=()=>{
     const searchField=document.getElementById('search-field');
     const searchText=searchField.value;
+    console.log(isNaN(searchText));
     searchField.value='';
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     
