@@ -48,6 +48,7 @@ const loadPhoneDetail = slug =>{
 /* display phone details */
 
 const displayPhoneDetail = phone =>{
+    console.log(phone);
    const phoneDetail = document.getElementById('phone-detail');
    phoneDetail.textContent = '';
    const div = document.createElement('div');
@@ -78,12 +79,12 @@ const displayPhoneDetail = phone =>{
            </ul>
            <p class="fs-5"><strong>Others:</strong></p>
            <ul>
-              <li>${phone.others.WLAN}</li>
-              <li>${phone.others.Bluetooth}</li>
-              <li>${phone.others.GPS}</li>
-              <li>${phone.others.NFC}</li>
-              <li>${phone.others.Radio}</li>
-              <li>${phone.others.USB}</li>
+              <li>${phone.others?.WLAN ? phone.others.WLAN : 'Not available'}</li>
+              <li>${phone.others?.Bluetooth ? phone.others.Bluetooth : 'Not available'} </li>
+              <li>${phone.others?.GPS ? phone.others.GPS : 'Not available'}</li>
+              <li>${phone.others?.NFC ? phone.others.NFC : 'Not available' }</li>
+              <li>${phone.others?.Radio ? phone.others.Radio : 'Not available'}</li>
+              <li>${phone.others?.USB ? phone.others.USB : 'Not available'}</li>
            </ul>
         </div>`;
 
