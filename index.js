@@ -28,7 +28,7 @@ const displaySearchResult= phones =>{
              <div class="card-body text-center">
                 <h3 class="card-title my-2">${phone.phone_name}</h3>
                 <h4 class="my-3">${phone.brand}</h4>
-                <button onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary">See Detail</button>
+                <a onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary" href="#" role="button">See Detail</a>
              </div>
             </div>`;
         phonesArea.appendChild(div);
@@ -58,7 +58,7 @@ const displayPhoneDetail = phone =>{
           <img class="w-100" src="${phone.image}" alt="">
         </div>
         <div class="col-md-6">
-           <p class="fs-5"><strong>Name:</strong>${phone.name}</p>
+           <p class="fs-5"><strong>Name:</strong> ${phone.name}</p>
            <p class="fs-5"><strong>Release-Date:</strong>
            ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}</p>
            <p class="fs-5"><strong>Main-Features:</strong></p>
