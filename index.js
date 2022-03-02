@@ -3,8 +3,8 @@ const searchField=()=>{
     const searchField=document.getElementById('search-field');
     const searchText=searchField.value;
     searchField.value='';
-   /*     error message hide */
-   document.getElementById('search-error').style.display = 'none';
+    /*error message hide */
+    document.getElementById('search-error').style.display = 'none';
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     
     fetch(url)
@@ -53,7 +53,6 @@ const loadPhoneDetail = slug =>{
 /* display phone details */
 
 const displayPhoneDetail = phone =>{
-    console.log(phone);
    const phoneDetail = document.getElementById('phone-detail');
    phoneDetail.textContent = '';
    const div = document.createElement('div');
@@ -63,7 +62,7 @@ const displayPhoneDetail = phone =>{
           <img class="w-100" src="${phone.image}" alt="">
         </div>
         <div class="col-md-6">
-           <p class="fs-5"><strong>Name:</strong> ${phone.name}</p>
+           <p class="fs-5"><strong>Phone-name:</strong> ${phone.name}</p>
            <p class="fs-5"><strong>Release-Date:</strong>
            ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}</p>
            <p class="fs-5"><strong>Main-Features:</strong></p>
