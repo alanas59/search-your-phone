@@ -2,8 +2,9 @@
 const searchField=()=>{
     const searchField=document.getElementById('search-field');
     const searchText=searchField.value;
-    console.log(isNaN(searchText));
     searchField.value='';
+   /*     error message hide */
+   document.getElementById('search-error').style.display = 'none';
     const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     
     fetch(url)
@@ -19,7 +20,10 @@ const displaySearchResult= phones =>{
     /*  phone detail inner area removed */
     const phoneDetail = document.getElementById('phone-detail');
     phoneDetail.textContent = '';
-
+    if(phones.length === 0)
+    {
+        document.getElementById('search-error').style.display = 'block';
+    }
     phones.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
